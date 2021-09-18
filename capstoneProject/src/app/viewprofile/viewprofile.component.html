@@ -1,0 +1,59 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <button mat-raised-button color="accent" class="mx-2" routerLink="/viewProfile">view profile</button><br><br>
+    <button mat-raised-button color="accent" class="mx-2" routerLink="/update">Update Profile</button><br><br>
+    <button mat-raised-button color="accent" class="mx-2" routerLink="/transfer">Transfer</button><br><br>
+    <button mat-raised-button color="accent" class="mx-2"routerLink="/balance">Balance</button>
+    </mat-drawer> 
+
+<div class="container-fluid">
+    <br>
+    <h2 style="text-align:center"><b>Customer Details</b></h2>
+    <br>
+    <br>
+   
+
+
+
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>AccountNumber</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Aadhar Number</th>
+                <th>Phone Number</th>
+                <th>Account Opening Date</th>
+                
+                
+               
+            
+                
+            </tr>
+
+        </thead>
+
+        <tbody *ngIf="customer">       
+                
+         
+
+                <td>{{customer.accountNumber}}</td>
+                <td>{{customer.firstName}}</td>
+                <td>{{customer.lastName}}</td>
+                <td>{{customer.aadharNumber}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td>{{customer.aod}}</td>
+               
+
+                <tbody  >     
+           
+           
+        </tbody>
+    </table>
+    <button mat-raised-button color="primary" type="button" mat-button (click)="drawer.toggle()">◀️Back</button>&nbsp;&nbsp;&nbsp;
+    <!-- <button mat-raised-button color="primary" type="button" mat-button (click)="">Balance</button>&nbsp;&nbsp;&nbsp; -->
+
+
+</div>

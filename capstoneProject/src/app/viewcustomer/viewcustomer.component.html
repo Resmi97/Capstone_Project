@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <br>
+    <h2 style="text-align:center"><b>Customer Details</b></h2>
+    <br>
+    <br>
+    <nav class="navbar navbar-dark bg-primary">
+       
+    </nav>
+
+
+
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>AccountNumber</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>BranchId</th>
+                <th>Aadhar Number</th>
+                <th>Phone Number</th>
+                <th>Account Opening Date</th>
+                <th>Status</th>
+            
+                
+            </tr>
+
+        </thead>
+
+        <tbody *ngIf="custResp">       
+            <tr *ngFor="let co of custResp">
+
+                <td>{{co.accountNumber}}</td>
+                <td>{{co.firstName}}</td>
+                <td>{{co.lastName}}</td>
+                <td>{{co.bank?.branchId}}</td>
+                <td>{{co.aadharNumber}}</td>
+                <td>{{co.phoneNumber}}</td>
+                <td>{{co.aod}}</td>
+                <td>
+                    <p *ngIf="co.status ==0">Active </p>
+                    <p *ngIf="co.status ==1">Inactive </p>
+                </td>
+           
+            </tr>       
+        </tbody>
+    </table>
+  
+</div>
